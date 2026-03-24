@@ -8,7 +8,9 @@ const IpInfoSettings: React.FC<Props> = ({ data = defaultData, setData }) => (
       <input
         type="checkbox"
         checked={data.displayCity}
-        onChange={() => setData({ ...data, displayCity: !data.displayCity })}
+        onChange={(event) =>
+          setData({ ...data, displayCity: event.target.checked })
+        }
       />
       <FormattedMessage
         id="plugins.ipInfo.displayCity"
@@ -21,8 +23,8 @@ const IpInfoSettings: React.FC<Props> = ({ data = defaultData, setData }) => (
       <input
         type="checkbox"
         checked={data.displayCountry}
-        onChange={() =>
-          setData({ ...data, displayCountry: !data.displayCountry })
+        onChange={(event) =>
+          setData({ ...data, displayCountry: event.target.checked })
         }
       />
       <FormattedMessage
@@ -36,7 +38,7 @@ const IpInfoSettings: React.FC<Props> = ({ data = defaultData, setData }) => (
       <input
         type="checkbox"
         checked={data.hideIP}
-        onChange={() => setData({ ...data, hideIP: !data.hideIP })}
+        onChange={(event) => setData({ ...data, hideIP: event.target.checked })}
       />{" "}
       <FormattedMessage
         id="plugins.ipInfo.hideIP"
@@ -49,7 +51,7 @@ const IpInfoSettings: React.FC<Props> = ({ data = defaultData, setData }) => (
       <input
         type="checkbox"
         checked={data.maskIP}
-        onChange={() => setData({ ...data, maskIP: !data.maskIP })}
+        onChange={(event) => setData({ ...data, maskIP: event.target.checked })}
       />{" "}
       <FormattedMessage
         id="plugins.ipInfo.maskIP"
@@ -62,8 +64,8 @@ const IpInfoSettings: React.FC<Props> = ({ data = defaultData, setData }) => (
       <input
         type="checkbox"
         checked={data.clickToRefresh}
-        onChange={() =>
-          setData({ ...data, clickToRefresh: !data.clickToRefresh })
+        onChange={(event) =>
+          setData({ ...data, clickToRefresh: event.target.checked })
         }
       />{" "}
       <FormattedMessage

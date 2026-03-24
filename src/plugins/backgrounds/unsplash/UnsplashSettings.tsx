@@ -170,7 +170,7 @@ const UnsplashSettings: React.FC<Props> = ({ data = defaultData, setData }) => {
               type="checkbox"
               checked={data.featured}
               onChange={(event) =>
-                setData({ ...data, featured: !data.featured })
+                setData({ ...data, featured: event.target.checked })
               }
             />{" "}
             <FormattedMessage
@@ -247,7 +247,9 @@ const UnsplashSettings: React.FC<Props> = ({ data = defaultData, setData }) => {
         <input
           type="checkbox"
           checked={data.showTitle}
-          onChange={() => setData({ ...data, showTitle: !data.showTitle })}
+          onChange={(event) =>
+            setData({ ...data, showTitle: event.target.checked })
+          }
         />{" "}
         <FormattedMessage {...backgroundMessages.showTitle} />
       </label>

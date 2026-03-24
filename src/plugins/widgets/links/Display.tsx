@@ -5,15 +5,6 @@ import { Icon } from "@iconify/react";
 import { Link, Cache } from "./types";
 import { isSpecialUrl, normalizeUrl } from "../../../utils";
 
-const displayUrl = (url: string): string => {
-  try {
-    const parsed = new URL(url);
-    return parsed.hostname + (parsed.pathname !== "/" ? parsed.pathname : "");
-  } catch (e) {
-    return url;
-  }
-};
-
 const getDomain = (url: string): string | null => {
   try {
     return new URL(url).hostname;

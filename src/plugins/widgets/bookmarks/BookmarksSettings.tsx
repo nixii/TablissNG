@@ -159,7 +159,7 @@ const BookmarksSettings: FC<Props> = ({ data = defaultData, setData }) => {
         <input
           type="checkbox"
           checked={data.wrap}
-          onChange={(event) => setData({ ...data, wrap: !data.wrap })}
+          onChange={(event) => setData({ ...data, wrap: event.target.checked })}
         />
         Wrap long titles
       </label>

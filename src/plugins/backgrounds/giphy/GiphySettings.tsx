@@ -90,7 +90,7 @@ const GiphySettings: FC<Props> = ({ data = defaultData, setData }) => {
         <input
           type="checkbox"
           checked={data.nsfw}
-          onChange={() => setData({ ...data, nsfw: !data.nsfw })}
+          onChange={(event) => setData({ ...data, nsfw: event.target.checked })}
         />{" "}
         <FormattedMessage
           id="backgrounds.giphy.nsfw"

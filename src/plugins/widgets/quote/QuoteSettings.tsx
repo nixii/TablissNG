@@ -1,4 +1,3 @@
-import { FC } from "react";
 import * as React from "react";
 // import categories from "./categories";
 import { FormattedMessage } from "react-intl";

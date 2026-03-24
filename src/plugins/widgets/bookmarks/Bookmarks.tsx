@@ -1,4 +1,4 @@
-import { FC, ReactNode, useEffect, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { defaultData, Props } from "./types";
 import "./Bookmarks.sass";
 import "../links/Links.sass";
@@ -220,7 +220,6 @@ const Node: FC<NodeProps> = ({
 const Bookmarks: FC<Props> = ({ data = defaultData, setData }) => {
   const [tree, setTree] = useState<BookmarkTreeNode>();
   const [hasPermission, setHasPermission] = useState<boolean>(true);
-  const [currentFolder, setCurrentFolder] = useState<string | null>(null);
   const [navigationStack, setNavigationStack] = useState<BookmarkTreeNode[]>(
     [],
   );
@@ -232,7 +231,6 @@ const Bookmarks: FC<Props> = ({ data = defaultData, setData }) => {
       });
       if (granted) {
         const rootId = data.rootBookmark || null;
-        setCurrentFolder(rootId);
         const treePromise = rootId
           ? browser.bookmarks.getSubTree(rootId)
           : browser.bookmarks.getTree();
@@ -254,7 +252,6 @@ const Bookmarks: FC<Props> = ({ data = defaultData, setData }) => {
     setHasPermission(granted);
     if (granted) {
       const rootId = data.rootBookmark || null;
-      setCurrentFolder(rootId);
       const treePromise = rootId
         ? browser.bookmarks.getSubTree(rootId)
         : browser.bookmarks.getTree();
@@ -267,7 +264,6 @@ const Bookmarks: FC<Props> = ({ data = defaultData, setData }) => {
 
   const navigateToFolder = async (folderId: string) => {
     const folderTree = await browser.bookmarks.getSubTree(folderId);
-    setCurrentFolder(folderId);
     setNavigationStack((prev) => [...prev, folderTree[0]]);
   };
 
@@ -276,8 +272,6 @@ const Bookmarks: FC<Props> = ({ data = defaultData, setData }) => {
       const newStack = [...navigationStack];
       newStack.pop();
       setNavigationStack(newStack);
-      const previousFolder = newStack[newStack.length - 1];
-      setCurrentFolder(previousFolder.id);
     }
   };
 

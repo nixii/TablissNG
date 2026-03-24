@@ -19,15 +19,6 @@ const Widgets: React.FC = () => {
     });
   }, [intl]);
 
-  const getWidgetName = (key: string) => {
-    const config = widgetConfigs.find((w) => w.key === key);
-    if (!config) return key;
-
-    return typeof config.name === "string"
-      ? config.name
-      : intl.formatMessage(config.name);
-  };
-
   return (
     <div>
       <h2>

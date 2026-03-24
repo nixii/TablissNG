@@ -8,7 +8,9 @@ const NbaSettings: FC<Props> = ({ data = defaultData, setData }) => (
       <input
         type="checkbox"
         checked={data.displayLogo}
-        onChange={() => setData({ ...data, displayLogo: !data.displayLogo })}
+        onChange={(event) =>
+          setData({ ...data, displayLogo: event.target.checked })
+        }
       />{" "}
       <FormattedMessage
         id="plugins.nba.displayTeamLogo"

@@ -40,12 +40,6 @@ const messages = defineMessages({
   },
 });
 
-interface Config {
-  name: { id: string; defaultMessage: string };
-  description: { id: string; defaultMessage: string };
-  settingsComponent?: React.ComponentType<any>;
-}
-
 interface Props {
   plugin: WidgetState;
   onMoveUp?: () => void;

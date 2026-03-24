@@ -46,7 +46,9 @@ const ApodSettings: React.FC<Props> = ({ data = defaultData, setData }) => (
       <input
         type="checkbox"
         checked={data.showTitle}
-        onChange={(event) => setData({ ...data, showTitle: !data.showTitle })}
+        onChange={(event) =>
+          setData({ ...data, showTitle: event.target.checked })
+        }
       />{" "}
       <FormattedMessage {...backgroundMessages.showTitle} />
     </label>

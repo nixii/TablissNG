@@ -18,7 +18,9 @@ const WeatherSettings: FC<Props> = ({ data = defaultData, setData }) => {
         <input
           type="checkbox"
           checked={data.autoUpdate || false}
-          onChange={() => setData({ ...data, autoUpdate: !data.autoUpdate })}
+          onChange={(event) =>
+            setData({ ...data, autoUpdate: event.target.checked })
+          }
         />{" "}
         <FormattedMessage
           id="plugins.weather.autoUpdate"
@@ -52,8 +54,8 @@ const WeatherSettings: FC<Props> = ({ data = defaultData, setData }) => {
             <input
               type="checkbox"
               checked={data.showDetails}
-              onChange={() =>
-                setData({ ...data, showDetails: !data.showDetails })
+              onChange={(event) =>
+                setData({ ...data, showDetails: event.target.checked })
               }
             />{" "}
             <FormattedMessage
@@ -67,7 +69,9 @@ const WeatherSettings: FC<Props> = ({ data = defaultData, setData }) => {
             <input
               type="checkbox"
               checked={data.showCity}
-              onChange={() => setData({ ...data, showCity: !data.showCity })}
+              onChange={(event) =>
+                setData({ ...data, showCity: event.target.checked })
+              }
             />{" "}
             <FormattedMessage
               id="plugins.weather.showCity"
