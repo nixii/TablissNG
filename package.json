@@ -34,7 +34,7 @@
     "sign:firefox": "node ./scripts/firefox-sign-manual.js",
     "deps:check": "npx npm-check",
     "deps:update": "npx npm-check -u",
-    "typecheck": "tsc --noEmit --skipLibCheck",
+    "typecheck": "tsc",
     "prepare": "husky"
   },
   "lint-staged": {
