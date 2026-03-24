@@ -1,4 +1,5 @@
 import React from "react";
+import { format } from "date-fns";
 import { defaultData, Props } from "./types";
 import { getPicture } from "./api";
 import BaseBackground from "../base/BaseBackground";
@@ -6,6 +7,18 @@ import { db } from "../../../db/state";
 import { useValue } from "../../../lib/db/react";
 
 const isDirectVideo = (url: string) => /\.(mp4|webm|ogg)(\?.*)?$/i.test(url);
+
+const isCacheFresh = (
+  cache: { date?: Date | string } | undefined,
+  data: { date: string; customDate?: string },
+): boolean => {
+  if (!cache?.date) return false;
+  const cachedDate = String(cache.date);
+  if (data.date === "custom") {
+    return cachedDate === data.customDate;
+  }
+  return cachedDate === format(new Date(), "yyyy-MM-dd");
+};
 
 const Apod: React.FC<Props> = ({
   cache,
@@ -19,6 +32,7 @@ const Apod: React.FC<Props> = ({
   const { scale = true, position } = background.display;
 
   React.useEffect(() => {
+    if (isCacheFresh(cache, data)) return;
     const isUpdate = mounted.current;
     getPicture(data, loader).then((result) => {
       setCache(result);
