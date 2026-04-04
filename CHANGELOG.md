@@ -8,7 +8,13 @@ I also attempt to follow the [Conventional Commits](https://www.conventionalcomm
 
 ## [Unreleased]
 
+## [1.6.6] - 4/4/2026 | LeetCode widget, APOD improvements, and important bugfixes
+
+Adds a new LeetCode calendar widget, APOD video support and cache improvements, a backgrounds controls visibility toggle, configurable quote refresh timeout, and a critical quick link upload bugfix. Also includes translation updates and A LOT OF INTERNAL REFACTORS.
+
 ### Added
+
+- feat(leetcode): add Leetcode calendar widget (#121). [a9e6eed3](https://github.com/BookCatKid/TablissNG/commit/a9e6eed3)
 
 - feat(apod): add video support and background handling. [62d202f5](https://github.com/BookCatKid/TablissNG/commit/62d202f5)
 
@@ -55,6 +61,10 @@ I also attempt to follow the [Conventional Commits](https://www.conventionalcomm
 - chore: pin serialize-javascript to ^7.0.4. [175a5fcc](https://github.com/BookCatKid/TablissNG/commit/175a5fcc)
 
 - feat(docs): add google site verification metadata. [57cf7578](https://github.com/BookCatKid/TablissNG/commit/57cf7578)
+
+- refactor: convert React namespace imports to named imports across codebase. [a9921099](https://github.com/BookCatKid/TablissNG/commit/a9921099)
+
+- style: sort imports across codebase. [4835fd8b](https://github.com/BookCatKid/TablissNG/commit/4835fd8b)
 
 - chore: docs deps override again. [e0a1162d](https://github.com/BookCatKid/TablissNG/commit/e0a1162d)
 
