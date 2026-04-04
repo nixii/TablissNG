@@ -16,6 +16,7 @@ import ImportBookmarks from "./ImportBookmarks";
 const LinksSettings: FC<Props> = ({
   data = defaultData,
   setData,
+  cache,
   setCache,
 }) => {
   const saveLinks = (links: Link[]) => setData({ ...data, links });
@@ -167,6 +168,7 @@ const LinksSettings: FC<Props> = ({
                 : undefined
             }
             onRemove={() => dispatch(removeLink(originalIndex))}
+            cache={cache}
             setCache={setCache}
           />
         );
