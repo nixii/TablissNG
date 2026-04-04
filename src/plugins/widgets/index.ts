@@ -12,6 +12,7 @@ import html from "./html";
 import ipInfo from "./ipInfo";
 import joke from "./joke";
 import js from "./js";
+import leetcode from "./leetcode";
 import links from "./links";
 import literatureClock from "./literatureClock";
 import message from "./message";
@@ -55,6 +56,7 @@ export const widgetConfigs = [
   workHours,
   timeTracker,
   tallyCounter,
+  leetcode,
 ];
 
 if (BUILD_TARGET === "web") {

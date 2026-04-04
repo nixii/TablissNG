@@ -169,6 +169,7 @@ if (isProduction && buildTarget !== "firefox") {
         {
           urlPattern: ({ url }) =>
             url.hostname === "github-contributions-api.jogruber.de" ||
+            url.hostname === "leetcode-api-pied.vercel.app" ||
             url.href.startsWith(
               "https://api.github.com/repos/BookCatKid/tablissNG",
             ),

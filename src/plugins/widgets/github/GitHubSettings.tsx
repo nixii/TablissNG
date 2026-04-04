@@ -5,7 +5,7 @@ import { DebounceInput } from "../../shared";
 import { defaultData, Props } from "./types";
 
 const GitHubSettings: FC<Props> = ({ data = defaultData, setData }) => (
-  <div className="MessageSettings">
+  <div className="GitHubSettings">
     <label>
       <FormattedMessage
         id="plugins.github.username"
@@ -119,5 +119,4 @@ const GitHubSettings: FC<Props> = ({ data = defaultData, setData }) => (
     </label>
   </div>
 );
-
 export default GitHubSettings;
