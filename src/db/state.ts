@@ -22,7 +22,13 @@ export interface State {
   /** Whether the overlay bar is hidden */
   hideSettingsIcon: boolean;
   /** Position of the settings icon */
-  settingsIconPosition: "topRight" | "topLeft" | "bottomRight" | "bottomLeft";
+  settingsIconPosition:
+    | "topRight"
+    | "topCentre"
+    | "topLeft"
+    | "bottomRight"
+    | "bottomCentre"
+    | "bottomLeft";
   /** Theme preference (light/dark/system) */
   themePreference: "light" | "dark" | "system";
   /** Whether to auto-hide settings menu when not hovering */
