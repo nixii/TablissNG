@@ -53,6 +53,7 @@ const languages = [
   "zh-CN",
   "zh-TW",
   "uk",
+  "tok",
 ];
 
 async function main() {

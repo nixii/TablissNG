@@ -236,6 +236,9 @@ const System: FC = () => {
           <option value="th" title="Thai">
             ไทย
           </option>
+          <option value="tok" title="Toki Pona">
+            toki pona
+          </option>
           <option value="tr" title="Turkish">
             Türkçe
           </option>
