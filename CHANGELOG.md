@@ -40,6 +40,8 @@ Adds a new LeetCode calendar widget, APOD video support and cache improvements, 
 
 - Update fr.json (#131). [9ec671e1](https://github.com/BookCatKid/TablissNG/commit/9ec671e1)
 
+- Added toki pona translation.
+
 ### Internal
 
 - refactor(tsconfig): modernization updates and cool stuff. [f5a7e3f2](https://github.com/BookCatKid/TablissNG/commit/f5a7e3f2)
